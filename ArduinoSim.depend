@@ -1,0 +1,105 @@
+# depslib dependency file v1.0
+1681482312 source:c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\main.cpp
+	<arduinoSimulator.h>
+
+1681311608 c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\include\arduinosimulator.h
+	<windows.h>
+	<arduinoPlatform.h>
+
+1681117098 c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\include\arduinoplatform.h
+	"windows.h"
+
+1681117098 source:c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\src\arduinoplatform.cpp
+	"arduinoPlatform.h"
+	"windows.h"
+	<time.h>
+	<demo.h>
+	<serial.h>
+
+1681117098 c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\include\demo.h
+
+1681117098 c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\include\serial.h
+	"Windows.h"
+	"stdlib.h"
+
+1681498904 source:c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\src\arduinosimulator.cpp
+	"arduinoSimulator.h"
+	"arduinoPlatform.h"
+	"tasks.h"
+	"interrupts.h"
+	"serial.h"
+	"GUI.h"
+	"demo.h"
+	"segment_display.h"
+
+1681117098 c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\include\tasks.h
+
+1681117098 c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\include\interrupts.h
+
+1681460670 c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\include\gui.h
+	<arduinoPlatform.h>
+	<windows.h>
+
+1681117098 source:c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\src\data.cpp
+	"data.h"
+
+1681117098 c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\include\data.h
+	<iostream>
+	<string>
+	<cmath>
+	<ctime>
+	<tasks.h>
+	<arduinoPlatform.h>
+	<list>
+
+1681498931 source:c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\src\gui.cpp
+	"GUI.h"
+	"arduinoPlatform.h"
+	"serial.h"
+	"segment_display.h"
+	"math.h"
+
+1681117099 source:c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\src\interrupts.cpp
+	"interrupts.h"
+	"arduinoPlatform.h"
+	"windows.h"
+	"stdio.h"
+
+1681117099 source:c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\src\pwm.cpp
+	"pwm.h"
+	<math.h>
+	<tasks.h>
+	<arduinoPlatform.h>
+
+1681117098 c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\include\pwm.h
+
+1681117099 source:c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\src\serial.cpp
+	"serial.h"
+	"windowsx.h"
+
+1681117099 source:c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\src\tasks.cpp
+	"tasks.h"
+	"arduinoPlatform.h"
+	"stdio.h"
+	"windows.h"
+
+1681498202 source:c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\src\demo.cpp
+	<arduinoPlatform.h>
+	<tasks.h>
+	<interrupts.h>
+	<stdio.h>
+	<serial.h>
+	<pwm.h>
+	<data.h>
+
+1681498956 source:c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\src\segment_display.cpp
+	"segment_display.h"
+	"windowsx.h"
+	<iostream>
+
+1681498831 c:\users\mihailo\documents\codeblocks projects\namenski\arduinosimv13\include\segment_display.h
+	"Windows.h"
+	"stdlib.h"
+	"serial.h"
+	"arduinoPlatform.h"
+
