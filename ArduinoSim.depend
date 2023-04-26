@@ -103,3 +103,107 @@
 	"serial.h"
 	"arduinoPlatform.h"
 
+1682505069 source:c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\main.cpp
+	<arduinoSimulator.h>
+
+1682505069 c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\include\arduinosimulator.h
+	<windows.h>
+	<arduinoPlatform.h>
+
+1682505069 c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\include\arduinoplatform.h
+	"windows.h"
+
+1682505069 source:c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\src\arduinoplatform.cpp
+	"arduinoPlatform.h"
+	"windows.h"
+	<time.h>
+	<demo.h>
+	<serial.h>
+
+1682505069 c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\include\demo.h
+
+1682505069 c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\include\serial.h
+	"Windows.h"
+	"stdlib.h"
+
+1682505069 source:c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\src\arduinosimulator.cpp
+	"arduinoSimulator.h"
+	"arduinoPlatform.h"
+	"tasks.h"
+	"interrupts.h"
+	"serial.h"
+	"GUI.h"
+	"demo.h"
+	"segment_display.h"
+
+1682505069 c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\include\tasks.h
+
+1682505069 c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\include\interrupts.h
+
+1682505069 c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\include\gui.h
+	<arduinoPlatform.h>
+	<windows.h>
+
+1682505069 c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\include\segment_display.h
+	"Windows.h"
+	"stdlib.h"
+	"serial.h"
+	"arduinoPlatform.h"
+
+1682505069 source:c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\src\data.cpp
+	"data.h"
+
+1682505069 c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\include\data.h
+	<iostream>
+	<string>
+	<cmath>
+	<ctime>
+	<tasks.h>
+	<arduinoPlatform.h>
+	<list>
+
+1682505069 source:c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\src\demo.cpp
+	<arduinoPlatform.h>
+	<tasks.h>
+	<interrupts.h>
+	<stdio.h>
+	<serial.h>
+	<pwm.h>
+	<data.h>
+
+1682505069 c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\include\pwm.h
+
+1682505069 source:c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\src\gui.cpp
+	"GUI.h"
+	"arduinoPlatform.h"
+	"serial.h"
+	"segment_display.h"
+	"math.h"
+
+1682505069 source:c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\src\interrupts.cpp
+	"interrupts.h"
+	"arduinoPlatform.h"
+	"windows.h"
+	"stdio.h"
+
+1682505069 source:c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\src\pwm.cpp
+	"pwm.h"
+	<math.h>
+	<tasks.h>
+	<arduinoPlatform.h>
+
+1682505069 source:c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\src\segment_display.cpp
+	"segment_display.h"
+	"windowsx.h"
+	<iostream>
+
+1682505069 source:c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\src\serial.cpp
+	"serial.h"
+	"windowsx.h"
+
+1682505069 source:c:\users\mihailo\documents\arduino sim v14\arduinosimulator-nrs\src\tasks.cpp
+	"tasks.h"
+	"arduinoPlatform.h"
+	"stdio.h"
+	"windows.h"
+

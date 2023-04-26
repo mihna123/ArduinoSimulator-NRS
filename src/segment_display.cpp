@@ -2,10 +2,10 @@
 #include "windowsx.h"
 #include <iostream>
 
-#define LED_LENGTH 100
-#define LED_THICK 27
-#define LED_X 50
-#define LED_Y 60
+#define LED_LENGTH 50
+#define LED_THICK 14
+#define LED_X 30
+#define LED_Y 40
 #define LED_SPACE 3
 
 
@@ -398,7 +398,7 @@ int segment_display::CreateSegmentDisplayWindow(HINSTANCE hInstance, HINSTANCE h
                "SegmentDisplayWindowClass",
                "7 SD",
                WS_OVERLAPPEDWINDOW ,
-               CW_USEDEFAULT, CW_USEDEFAULT, 285, 390,
+               CW_USEDEFAULT, CW_USEDEFAULT, 165, 230,
                NULL, NULL, hInstance, NULL);
 
     if(hwndWindow == NULL)
