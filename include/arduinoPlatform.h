@@ -21,6 +21,10 @@ typedef struct{
        int state[ANALOG_NUM_PINS];
 } analogPinsType;
 
+void showDisplay(int);
+
+void createSegmentDisplayAt(int);
+
 void digitalWrite(int, int);
 
 int digitalRead(int);

@@ -11,6 +11,6 @@ Use startInterrupts = true to enable interrupts
 Use startSerial = true to enable show GUI for Serial monitor
 */
 
-void startArduinoSimulator(int showGUI, int hideConsole, int startTasks, int startInterrupts, int startSerial, int startSegmentDisplay);
+void startArduinoSimulator(int showGUI, int hideConsole, int startTasks, int startInterrupts, int startSerial);
 
 #endif // SIMULATOR_H

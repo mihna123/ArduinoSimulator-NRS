@@ -56,7 +56,7 @@
 		<Unit filename="include/demo.h" />
 		<Unit filename="include/interrupts.h" />
 		<Unit filename="include/pwm.h" />
-		<Unit filename="include/segment_display.h" />
+		<Unit filename="include/segmentDisplay.h" />
 		<Unit filename="include/serial.h" />
 		<Unit filename="include/tasks.h" />
 		<Unit filename="main.cpp" />
@@ -67,7 +67,6 @@
 		<Unit filename="src/demo.cpp" />
 		<Unit filename="src/interrupts.cpp" />
 		<Unit filename="src/pwm.cpp" />
-		<Unit filename="src/segment_display.cpp" />
 		<Unit filename="src/serial.cpp" />
 		<Unit filename="src/tasks.cpp" />
 		<Extensions />

@@ -1,9 +1,12 @@
 #include "GUI.h"
 #include "arduinoPlatform.h"
 #include "serial.h"
-#include "segment_display.h"
 #include "math.h"
+#include<segmentDisplay.h>
 //#include <cstdlib>
+
+extern int disp_pin_start[10];
+HWND hwndDisp[10];
 
 char* itoa3(int n, char *c, int b){
    char s[33];
@@ -20,7 +23,6 @@ char* itoa3(int n, char *c, int b){
 
 GUI *me;
 extern serial Serial;
-extern segment_display s_display;
 
 GUI::GUI()
 {
@@ -42,14 +44,12 @@ const int GUI::ledPins[8] = {33, 32, 31, 30, 29, 28, 27, 26};
 
 void GUI::LoadImages()
 {
-    //todo add images for 7 seg display
    switchOnImg = (HBITMAP) LoadImageW(NULL, L"Images\\switchOn.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
    switchOffImg = (HBITMAP) LoadImageW(NULL, L"Images\\switchOff.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
    ledOnImg = (HBITMAP) LoadImageW(NULL, L"Images\\ledOn.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
    ledOffImg = (HBITMAP) LoadImageW(NULL, L"Images\\ledOff.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
    buttonOnImg = (HBITMAP) LoadImageW(NULL, L"Images\\buttonOn.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
    buttonOffImg = (HBITMAP) LoadImageW(NULL, L"Images\\buttonOff.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
-
 }
 
 void GUI::CreateGUI(HWND hwnd){
@@ -78,8 +78,6 @@ void GUI::CreateGUI(HWND hwnd){
         }
         hwndSerial = CreateWindow(TEXT("button"), TEXT("Show / hide serial"), WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON |WS_TABSTOP ,
                                          330, 5, 150, 25, hwnd, (HMENU) 501, NULL, NULL);
-        hwndSegment = CreateWindow(TEXT("button"), TEXT("Show / hide SD"), WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON |WS_TABSTOP ,
-                                         330, 35, 150, 25, hwnd, (HMENU) 502, NULL, NULL);
 
         CreateWindow(TEXT("static"), "A0", WS_VISIBLE | WS_CHILD, 423, 230, 25, 25, hwnd, (HMENU) 202, NULL, NULL);
         CreateWindow(TEXT("static"), "0", WS_VISIBLE | WS_CHILD, 427, 153, 15, 15, hwnd, (HMENU) 202, NULL, NULL);
@@ -181,7 +179,6 @@ void GUI::setLED(){
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     HWND W = FindWindowA("SerialWindowClass", NULL);
-    HWND SegW = FindWindowA("SegmentDisplayWindowClass", NULL);
     DRAWITEMSTRUCT *dis;
     switch(msg)
     {
@@ -191,8 +188,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     case WM_CLOSE:
         if (W!=NULL)
            DestroyWindow(W);
-        if(SegW != NULL)
-            DestroyWindow(SegW);
         DestroyWindow(hwnd);
         break;
     case WM_DESTROY:
@@ -223,19 +218,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     case WM_COMMAND:
       {
         switch(HIWORD(wParam)){
-         case BN_CLICKED: //todo
+         case BN_CLICKED:
              if (wParam==501) {
                 if (Serial.isVisible())
                     Serial.hideGUI();
                 else
                     Serial.showGUI();
-             }
-             else if(wParam == 502){
-                if(s_display.isVisible()){
-                    s_display.hideGUI();
-                }else{
-                    s_display.showGUI();
-                }
              }
              else if (wParam<400 || wParam>403)
                  me->GUIPressed(wParam, lParam);
@@ -296,6 +284,10 @@ int WINAPI GUI::WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     }
     ShowWindow(hwnd, nCmdShow);
     UpdateWindow(hwnd);
+    for(int i = 0; i < 10; i++){
+        createDisplayWnd(&hwndDisp[i]);
+    }
+
 
 //     Step 3: The Message Loop
     while(GetMessage(&Msg, NULL, 0, 0) > 0)
@@ -306,3 +298,5 @@ int WINAPI GUI::WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     }
     return Msg.wParam;
 }
+
+

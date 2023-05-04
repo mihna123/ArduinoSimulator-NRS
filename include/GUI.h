@@ -35,7 +35,6 @@ class GUI
        HWND hwndSwitch[4];
        HWND hwndSlider;
        HWND hwndSerial;
-       HWND hwndSegment;
        void LoadImages();
 };
 

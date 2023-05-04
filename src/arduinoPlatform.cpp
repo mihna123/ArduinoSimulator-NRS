@@ -4,7 +4,11 @@
 #include <demo.h>
 #include<serial.h>
 
+int seg_disp_num = 0;
 extern serial Serial;
+extern int disp_pin_start[10];
+extern HWND hwndDisp[10];
+
 
 digitalPinsType digitalPins;
 analogPinsType analogPins;
@@ -63,6 +67,15 @@ unsigned long millis(){
 void delay(unsigned long ms){
     unsigned long startTime = millis();
     while (millis()-startTime<ms);
+}
+
+void createSegmentDisplayAt(int pin_num){
+    disp_pin_start[seg_disp_num] = pin_num;
+    while(hwndDisp[seg_disp_num] == NULL){
+        continue;
+    }
+    ShowWindow(hwndDisp[seg_disp_num],1);
+    seg_disp_num++;
 }
 
 int random(int n){

@@ -5,14 +5,14 @@
 #include "serial.h"
 #include "GUI.h"
 #include "demo.h"
-#include "segment_display.h"
+
 
 extern digitalPinsType digitalPins;
 extern analogPinsType analogPins;
 extern void loop();
 extern void setup();
 extern serial Serial;
-extern segment_display s_display;
+
 
 void hideConsoleWindow(){
     AllocConsole();
@@ -26,12 +26,10 @@ void closeConsole(){
     SendMessageW(konzola, WM_CLOSE, 0, 0);
 }
 
-void startArduinoSimulator(int showGUI, int hideConsole, int startTasks, int startInterrupts, int startSerial, int startSegmentDisplay)
+void startArduinoSimulator(int showGUI, int hideConsole, int startTasks, int startInterrupts, int startSerial)
 {
     HANDLE mainThread;
-    HANDLE segmentDisplayThread;
     DWORD mainThreadId;
-    DWORD segnentDThreadID;
     GUI *basicIOShield;
 
     for (int i = 0; i<DIGITAL_NUM_PINS; i++) {
@@ -53,12 +51,8 @@ void startArduinoSimulator(int showGUI, int hideConsole, int startTasks, int sta
     if (startSerial) {
         Serial.showGUI();
     }
-    s_display.startGUI();
-    if(startSegmentDisplay){
-        s_display.showGUI();
-    }
     mainThread = CreateThread(NULL, 0, &mainLoop, NULL, 0, &mainThreadId);
-    segmentDisplayThread = CreateThread(NULL,0,&segmentDisplayLoop,&s_display,0,&segnentDThreadID);
+
     if (showGUI) {
         basicIOShield = new GUI();
         basicIOShield->startGUI();
@@ -68,6 +62,5 @@ void startArduinoSimulator(int showGUI, int hideConsole, int startTasks, int sta
     if (startInterrupts)
         endInterruptManager();
     CloseHandle(mainThread);
-    CloseHandle(segmentDisplayThread);
     closeConsole();
 }

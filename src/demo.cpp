@@ -7,14 +7,14 @@
 #include<data.h>
 
 extern serial Serial;
-int a,b,c,d,i=0;
-
+int a,b,c,d,e,f,g,n,i=0;
 void setup()
 {
-    pinMode(26,OUTPUT);
-    pinMode(27,OUTPUT);
-    pinMode(28,OUTPUT);
-    pinMode(29,OUTPUT);
+    createSegmentDisplayAt(26);
+    createSegmentDisplayAt(27);
+    createSegmentDisplayAt(30);
+    createSegmentDisplayAt(31);
+
 }
 
 void loop()
@@ -23,10 +23,20 @@ void loop()
     b = i & 0b0010;
     c = i & 0b0100;
     d = i & 0b1000;
-    i = (i+1)%16;
+    e = i & 0b10000;
+    f = i & 0b100000;
+    g = i & 0b1000000;
+    n = i & 0b10000000;
+
+    i = (i+1)%256;
     digitalWrite(26,a);
     digitalWrite(27,b);
     digitalWrite(28,c);
     digitalWrite(29,d);
-    delay(500);
+    digitalWrite(30,e);
+    digitalWrite(31,f);
+    digitalWrite(32,g);
+    digitalWrite(33,n);
+    delay(200);
+
 }
